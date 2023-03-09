@@ -7,5 +7,6 @@
 
  $ touch .gitignore
 
+ $ pnpm tsc --init
  
 ```
