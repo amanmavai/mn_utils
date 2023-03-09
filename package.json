@@ -1,5 +1,5 @@
 {
-  "name": "mn_utils",
+  "name": "@amanmavai/utils",
   "version": "0.1.0",
   "description": "utility functions to be used across all my projects",
   "main": "dist/mn_utils.js",
