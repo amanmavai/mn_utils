@@ -44,3 +44,13 @@ export function mapArrToObj(arr: any[]) {
   export function noop(): undefined {
     return undefined
   }
+
+  export function removeTrailingSlash(s: string) {
+    return s.endsWith('/') ? s.slice(0, -1) : s
+  }
+
+  export function callAll<Args extends Array<unknown>>(
+    ...fns: Array<((...args: Args) => unknown) | undefined>
+  ) {
+    return (...args: Args) => fns.forEach(fn => fn?.(...args))
+  }
