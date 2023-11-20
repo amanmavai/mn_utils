@@ -54,3 +54,19 @@ export function mapArrToObj(arr: any[]) {
   ) {
     return (...args: Args) => fns.forEach(fn => fn?.(...args))
   }
+
+  // Memoize a function to store and reuse its results
+  export function memoize(func) {
+    const cache = {};
+
+    return function (...args) {
+        const key = JSON.stringify(args);
+        if (cache[key] !== undefined) {
+          return cache[key];
+        }
+
+        const result = func(...args);
+        cache[key] = result;
+        return result;
+   };
+ }
